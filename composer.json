@@ -1,5 +1,5 @@
 {
-    "name": "digivo/string-blade-compiler",
+    "name": "digivo/laravel-string-blade-compiler",
     "description": "Render Blade templates from a string",
     "keywords": ["laravel", "blade", "compiler", "eloquent", "model"],
     "license": "MIT",
