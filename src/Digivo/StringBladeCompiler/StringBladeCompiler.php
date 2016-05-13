@@ -65,7 +65,7 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
      */
     public function isExpired($path)
     {
-        if (!$this->config->get('string-blade-compiler.cache')) {
+        if (!$this->config->get('string-blade-compiler.cache') OR !$this->config->get('string-blade-compiler.cache_time') OR !is_int($this->config->get('string-blade-compiler.cache_time'))) {
             return true;
         }
         $compiled = $this->getCompiledPath($path);
@@ -77,8 +77,6 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
             return true;
         }
 
-        $lastModified = strtotime($path->updated_at);
-
-        return $lastModified >= $this->files->lastModified($compiled);
+        return $this->files->lastModified($compiled) >= strtotime('-'.$this->config->get('string-blade-compiler.cache_time').' minutes');
     }
 }
