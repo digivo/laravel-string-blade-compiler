@@ -34,4 +34,4 @@ This package offers a `StringView` facade with the same syntax as `View` but acc
 
 ### License
 
-string-blade-compiler is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+laravel-string-blade-compiler is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
