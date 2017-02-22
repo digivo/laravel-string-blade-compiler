@@ -38,7 +38,7 @@ class StringBladeCompilerServiceProvider extends ServiceProvider
         $config_path = __DIR__ . '/../../../config/string-blade-compiler.php';
         $this->mergeConfigFrom($config_path, 'string-blade-compiler');
 
-        $this->app['stringview'] = $this->app->share(function ($app) {
+        $this->app->singleton('stringview', function ($app) {
             $cache_path = storage_path('app/string-blade-compiler/views');
 
             $string_view = new StringView($app['config']);
