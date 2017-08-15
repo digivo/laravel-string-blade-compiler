@@ -6,19 +6,19 @@ Originally forked from [Flynsarmy/laravel-db-blade-compiler](https://github.com/
 
 This package generates and returns a compiled view from a provided string
 
-### Installation (Laravel 5.x)
+### Installation (Laravel 5.4.x)
 
-Require this package in your composer.json and run composer update (or run `composer require digivo/laravel-string-blade-compiler:1.*` directly):
+Require this package in your composer.json and run composer update (or run `composer require bilaliqbalr/laravel-string-blade-compiler:1.*` directly):
 
-    "digivo/laravel-string-blade-compiler": "1.*"
+    "bilaliqbalr/laravel-string-blade-compiler": "1.*"
 
 After updating composer, add the ServiceProvider to the providers array in app/config/app.php
 
-    'Digivo\StringBladeCompiler\StringBladeCompilerServiceProvider',
+    Bilaliqbalr\StringBladeCompiler\StringBladeCompilerServiceProvider::class,
 
 and the Facade to the aliases array in the same file
 
-    'StringView'          => 'Digivo\StringBladeCompiler\Facades\DigivoView',
+    'StringView'          => Bilaliqbalr\StringBladeCompiler\Facades\StringView::class,
 
 You have to also publish the config-file
 
