@@ -55,7 +55,7 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
         // Once we have the contents of the view, we will flush the sections if we are
         // done rendering all views so that there is nothing left hanging over when
         // anothoer view is rendered in the future by the application developers.
-        View::flushSectionsIfDoneRendering();
+        View::flushSections();
 
         return $response ?: $contents;
     }
