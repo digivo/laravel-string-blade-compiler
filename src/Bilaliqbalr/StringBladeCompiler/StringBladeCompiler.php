@@ -1,5 +1,5 @@
-<?php 
-namespace Digivo\StringBladeCompiler;
+<?php
+namespace Bilaliqbalr\StringBladeCompiler;
 
 use Illuminate\View\Compilers\BladeCompiler;
 use Illuminate\View\Compilers\CompilerInterface;
@@ -16,10 +16,10 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
         $blade = app('view')->getEngineResolver()->resolve('blade')->getCompiler();
 
         parent::__construct($filesystem, $cache_path);
-        $this->rawTags = $blade->getRawTags();
-        $this->contentTags = $blade->getContentTags();
-        $this->escapedTags = $blade->getEscapedContentTags();
-        $this->extensions = $blade->getExtensions();
+        $this->rawTags = $blade->rawTags;
+        $this->contentTags = $blade->contentTags;
+        $this->escapedTags = $blade->escapedTags;
+        $this->extensions = $blade->extensions;
         $this->customDirectives = $blade->getCustomDirectives();
         $this->config = $config;
     }
@@ -54,7 +54,7 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
          *
          * e.g db_table_name_id_4
          */
-        return $this->cachePath . '/' . md5($path);
+        return $this->cachePath . '/' . md5($path) . '.php';
     }
 
     /**
