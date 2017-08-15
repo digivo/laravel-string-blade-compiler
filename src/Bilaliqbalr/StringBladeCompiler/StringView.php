@@ -1,5 +1,5 @@
-<?php 
-namespace Digivo\StringBladeCompiler;
+<?php
+namespace Bilaliqbalr\StringBladeCompiler;
 
 use View;
 use Closure;
