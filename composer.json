@@ -1,9 +1,14 @@
 {
-    "name": "digivo/laravel-string-blade-compiler",
+    "name": "bilaliqbalr/laravel-string-blade-compiler",
     "description": "Render Blade templates from a string",
     "keywords": ["laravel", "blade", "compiler", "eloquent", "model"],
     "license": "MIT",
     "authors": [
+        {
+            "name": "Bilal",
+            "email": "bilal@phalcosoft.com",
+            "homepage": "https://phalcosoft.com"
+        },
         {
             "name": "Digivo",
             "email": "hello@digivo.co.uk"
@@ -23,7 +28,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Digivo\\StringBladeCompiler\\": "src/"
+            "Bilaliqbalr\\StringBladeCompiler\\": "src/"
         }
     },
     "minimum-stability": "stable"

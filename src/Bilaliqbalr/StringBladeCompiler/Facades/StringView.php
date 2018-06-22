@@ -1,5 +1,5 @@
-<?php 
-namespace Digivo\StringBladeCompiler\Facades;
+<?php
+namespace Bilaliqbalr\StringBladeCompiler\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

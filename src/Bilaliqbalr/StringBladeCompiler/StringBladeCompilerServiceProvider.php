@@ -1,5 +1,5 @@
-<?php 
-namespace Digivo\StringBladeCompiler;
+<?php
+namespace Bilaliqbalr\StringBladeCompiler;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\CompilerEngine;
@@ -49,7 +49,7 @@ class StringBladeCompilerServiceProvider extends ServiceProvider
         });
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('StringView', 'Digivo\StringBladeCompiler\Facades\StringView');
+            $loader->alias('StringView', 'Bilaliqbalr\StringBladeCompiler\Facades\StringView');
         });
     }
 
