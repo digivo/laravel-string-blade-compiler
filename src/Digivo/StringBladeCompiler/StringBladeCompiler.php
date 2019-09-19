@@ -29,7 +29,7 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
      * @param  string  $path
      * @return void
      */
-    public function compile($path)
+    public function compile($path = null)
     {
         $contents = $this->compileString($path);
 
