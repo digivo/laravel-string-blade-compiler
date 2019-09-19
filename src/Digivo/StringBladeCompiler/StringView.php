@@ -1,15 +1,14 @@
-<?php 
+<?php
+
 namespace Digivo\StringBladeCompiler;
 
-use View;
-use Closure;
 use ArrayAccess;
+use Illuminate\Support\Facades\View;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 
 class StringView extends \Illuminate\View\View implements ArrayAccess, Renderable
 {
-
     /** @var \Illuminate\Config\Repository */
     protected $config;
 
@@ -21,6 +20,7 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
     public function setEngine($compiler)
     {
         $this->engine = $compiler;
+
         return $this;
     }
 
@@ -43,10 +43,10 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
     /**
      * Get the string contents of the view.
      *
-     * @param  \Closure  $callback
+     * @param  callable  $callback
      * @return string
      */
-    public function render(Closure $callback = null)
+    public function render(callable $callback = null)
     {
         $contents = $this->renderContents();
 
@@ -54,7 +54,7 @@ class StringView extends \Illuminate\View\View implements ArrayAccess, Renderabl
 
         // Once we have the contents of the view, we will flush the sections if we are
         // done rendering all views so that there is nothing left hanging over when
-        // anothoer view is rendered in the future by the application developers.
+        // another view is rendered in the future by the application developers.
         View::flushSectionsIfDoneRendering();
 
         return $response ?: $contents;

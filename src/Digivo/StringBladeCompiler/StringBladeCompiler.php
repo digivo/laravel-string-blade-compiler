@@ -6,7 +6,6 @@ use Illuminate\View\Compilers\CompilerInterface;
 
 class StringBladeCompiler extends BladeCompiler implements CompilerInterface
 {
-
     /** @var \Illuminate\Config\Repository */
     protected $config;
 
@@ -47,13 +46,6 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
      */
     public function getCompiledPath($path)
     {
-        /*
-         * A unique path for the given model instance must be generated
-         * so the view has a place to cache. The following generates a
-         * path using almost the same logic as Blueprint::createIndexName()
-         *
-         * e.g db_table_name_id_4
-         */
         return $this->cachePath . '/' . md5($path);
     }
 
@@ -65,9 +57,10 @@ class StringBladeCompiler extends BladeCompiler implements CompilerInterface
      */
     public function isExpired($path)
     {
-        if (!$this->config->get('string-blade-compiler.cache') OR !$this->config->get('string-blade-compiler.cache_time') OR !is_int($this->config->get('string-blade-compiler.cache_time'))) {
+        if (!$this->config->get('string-blade-compiler.cache') || !$this->config->get('string-blade-compiler.cache_time') || !is_int($this->config->get('string-blade-compiler.cache_time'))) {
             return true;
         }
+
         $compiled = $this->getCompiledPath($path);
 
         // If the compiled file doesn't exist we will indicate that the view is expired
